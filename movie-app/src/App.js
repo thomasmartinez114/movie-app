@@ -1,36 +1,31 @@
 import React, { useState } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css';
 import MovieList from './components/MovieList';
 
 const App = () => {
   const [movies, setmovies] = useState([
-      {
-        "Title": "Dumb and Dumber",
-        "Year": "1994",
-        "imdbID": "tt0109686",
+        {
+          "Title": "Friday",
+          "Year": "1995",
+          "imdbID": "tt0113118",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BYmEwNjNlZTUtNzkwMS00ZTlhLTkyY2MtMjM2MzlmODQyZGVhXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg"
+        },
+        {
+        "Title": "Next Friday",
+        "Year": "2000",
+        "imdbID": "tt0195945",
         "Type": "movie",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZDQwMjNiMTQtY2UwYy00NjhiLTk0ZWEtZWM5ZWMzNGFjNTVkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-    },
-    {
-        "Title": "Dumb and Dumber To",
-        "Year": "2014",
-        "imdbID": "tt2096672",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZTg4NTkzMDEtM2MzOS00MDE1LWJmYWItYzdiMGRiNTdmZmFkXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+        },
+        {
+        "Title": "Friday After Next",
+        "Year": "2002",
+        "imdbID": "tt0293815",
         "Type": "movie",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BMTYxMzA0MzAyMF5BMl5BanBnXkFtZTgwMjMyNjcwMjE@._V1_SX300.jpg"
-    },
-    {
-        "Title": "Dumb and Dumber",
-        "Year": "1995–1996",
-        "imdbID": "tt0111946",
-        "Type": "series",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BMTQyMDA5Mjc3Ml5BMl5BanBnXkFtZTcwNzE4NjIyMQ@@._V1_SX300.jpg"
-    },
-    {
-        "Title": "That's Awesome! The Story of 'Dumb and Dumber To'",
-        "Year": "2015",
-        "imdbID": "tt4470986",
-        "Type": "movie",
-        "Poster": "N/A"
-    },
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTE5NTI3OTYyN15BMl5BanBnXkFtZTYwNjUxNTg2._V1_SX300.jpg"
+        }
   ]);
   return <div>
     <MovieList movies = {movies} />
