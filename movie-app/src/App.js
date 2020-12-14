@@ -27,9 +27,13 @@ const App = () => {
         "Poster": "https://m.media-amazon.com/images/M/MV5BMTE5NTI3OTYyN15BMl5BanBnXkFtZTYwNjUxNTg2._V1_SX300.jpg"
         }
   ]);
-  return <div>
-    <MovieList movies = {movies} />
-  </div>;
+  return (
+  <div className="container-fluid">
+    <div className="row">
+      <MovieList movies = {movies} />
+    </div>
+  </div>
+  );
 };
 
 export default App;
