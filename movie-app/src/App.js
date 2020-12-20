@@ -26,7 +26,7 @@ const App = () => {
   return (
   <div className="container-fluid movie-app">
     <div className='row d-flex align-items-center mt-4 mb-4'>
-      <MovieListHeading heading='My Movies Library'/>
+      <MovieListHeading heading='TommieTheatre'/>
       <SearchBox/>
     </div>
     <div className="row">
