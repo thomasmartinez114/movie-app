@@ -9,25 +9,27 @@ const App = () => {
   const [movies, setmovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-  const getMovieRequest = async () => {
-    const url = "http://www.omdbapi.com/?s=star wars&apikey=fe627a67"
+  const getMovieRequest = async (searchValue) => {
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=fe627a67`
 
     const response = await fetch(url);
     const responseJson = await response.json(); //convert http request to json
 
-    console.log(responseJson);
+    if(responseJson.Search) {
     setmovies(responseJson.Search);
+    }
   };
 
+  // useEffect always gets called on first render
   useEffect(() => {
-    getMovieRequest();
-  }, []); // gets called when page loads only
+    getMovieRequest(searchValue);
+  }, [searchValue]); // gets called when page loads only
 
   return (
   <div className="container-fluid movie-app">
     <div className='row d-flex align-items-center mt-4 mb-4'>
       <MovieListHeading heading='TommieTheatre'/>
-      <SearchBox/>
+      <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
     </div>
     <div className="row">
       <MovieList movies = {movies} />
