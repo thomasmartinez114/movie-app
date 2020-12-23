@@ -63,7 +63,7 @@ const App = () => {
       <MovieList movies = {movies} handleFavoritesClick={addFavoriteMovie} favoriteComponent={AddFavorites}/>
     </div>
     <div className='row d-flex align-items-center mt-4 mb-4'>
-          <MovieListHeading heading='Favorites'/>
+          <MovieListHeading heading='My Favorites'/>
     </div>
     <div className="row">
       <MovieList movies = {favorites} handleFavoritesClick={removeFavoriteMovie} favoriteComponent={RemoveFavorites}/>
