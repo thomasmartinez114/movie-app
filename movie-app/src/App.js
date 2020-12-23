@@ -28,9 +28,14 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]); // gets called when page loads only
 
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('react-movie-app-favorites', JSON.stringify(items));
+  };
+
   const addFavoriteMovie = (movie) => {
     const newFavoriteList = [...favorites, movie]; //copy of favorites arr, add the new movie to it
     setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList); // to save to local storage
   };
 
   const removeFavoriteMovie = (movie) => {
