@@ -50,6 +50,7 @@ const App = () => {
       );
 
       setFavorites(newFavoriteList);
+      saveToLocalStorage(newFavoriteList);
   }
 
   return (
