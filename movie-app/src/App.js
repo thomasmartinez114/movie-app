@@ -23,10 +23,16 @@ const App = () => {
     }
   };
 
-  // useEffect always gets called on first render
+  // useEffect always gets called on first render of app
   useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue]); // gets called when page loads only
+
+  useEffect(() => {
+    const movieFavorites = JSON.parse(localStorage.getItem('react-movie-app-favorites'));
+
+    setFavorites(movieFavorites);
+  }, []);
 
   const saveToLocalStorage = (items) => {
     localStorage.setItem('react-movie-app-favorites', JSON.stringify(items));
